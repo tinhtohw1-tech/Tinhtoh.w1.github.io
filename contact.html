@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Tinhtoh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">TINHTOH</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="about.html" onclick="toggleMenu()">About</a>
+    <a href="work.html" onclick="toggleMenu()">Work</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <div class="orb orb3"></div>
+    </div>
+    <div class="container">
+      <div class="page-hero-label animate-in">Get In Touch</div>
+      <h1 class="page-hero-title animate-in" style="animation-delay:0.1s">Let's talk<br>about something<br><em>great</em></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-left animate-in">
+          <h2>Say hello 👋</h2>
+          <p>Whether you have a project idea, a collaboration in mind, or just want to connect — I'd love to hear from you.</p>
+          <p>Fill out the form or reach me directly through any of the channels below.</p>
+
+          <div class="contact-channels">
+            <div class="contact-channel">
+              <div class="channel-icon">✉</div>
+              <div>
+                <div class="channel-label">Email</div>
+                <div class="channel-value">hello@tinhtoh.com</div>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <div class="channel-icon">📍</div>
+              <div>
+                <div class="channel-label">Location</div>
+                <div class="channel-value">Thailand</div>
+              </div>
+            </div>
+            <div class="contact-channel">
+              <div class="channel-icon">⏱</div>
+              <div>
+                <div class="channel-label">Response time</div>
+                <div class="channel-value">Usually within 24 hours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-right animate-in" style="animation-delay:0.2s">
+          <div class="contact-form-card">
+            <div id="formWrap">
+              <div class="form-group">
+                <label for="fname">Your name</label>
+                <input type="text" id="fname" placeholder="e.g. Alex" />
+              </div>
+              <div class="form-group">
+                <label for="femail">Your email</label>
+                <input type="email" id="femail" placeholder="alex@example.com" />
+              </div>
+              <div class="form-group">
+                <label for="fsubject">Subject</label>
+                <input type="text" id="fsubject" placeholder="What's this about?" />
+              </div>
+              <div class="form-group">
+                <label for="fmessage">Message</label>
+                <textarea id="fmessage" rows="5" placeholder="Tell me more..."></textarea>
+              </div>
+              <button class="btn-primary btn-full" onclick="submitForm()">Send Message ✦</button>
+            </div>
+            <div id="formSuccess" style="display:none" class="form-success">
+              <div class="success-icon">✦</div>
+              <h3>Message sent!</h3>
+              <p>Thanks for reaching out. I'll get back to you soon.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">TINHTOH</span>
+      <span class="footer-copy">© 2025 Tinhtoh. Built with HTML & CSS.</span>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+
+    function submitForm() {
+      const name = document.getElementById('fname').value.trim();
+      const email = document.getElementById('femail').value.trim();
+      const msg = document.getElementById('fmessage').value.trim();
+      if (!name || !email || !msg) {
+        alert('Please fill in your name, email, and message.');
+        return;
+      }
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'flex';
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-in').forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>

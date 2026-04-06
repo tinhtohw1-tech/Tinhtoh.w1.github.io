@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Tinhtoh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">TINHTOH</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="about.html" onclick="toggleMenu()">About</a>
+    <a href="work.html" onclick="toggleMenu()">Work</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <div class="orb orb1"></div>
+    </div>
+    <div class="container">
+      <div class="page-hero-label animate-in">Portfolio</div>
+      <h1 class="page-hero-title animate-in" style="animation-delay:0.1s">Things I've<br>built & made</h1>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <section class="section">
+    <div class="container">
+      <div class="filter-tabs animate-in">
+        <button class="filter-btn active" onclick="filterWork('all', this)">All</button>
+        <button class="filter-btn" onclick="filterWork('web', this)">Web</button>
+        <button class="filter-btn" onclick="filterWork('brand', this)">Branding</button>
+        <button class="filter-btn" onclick="filterWork('other', this)">Other</button>
+      </div>
+
+      <div class="works-list" id="worksList">
+
+        <div class="work-item animate-in" data-cat="web" style="animation-delay:0.1s">
+          <div class="work-item-num">01</div>
+          <div class="work-item-body">
+            <div class="work-item-header">
+              <h3>Tinhtoh.github.io</h3>
+              <span class="work-item-tag">Web</span>
+            </div>
+            <p>My personal portfolio website — built from scratch with HTML and CSS. No frameworks, no templates. Just code I wrote myself.</p>
+            <div class="work-item-meta">2025 · HTML / CSS</div>
+          </div>
+          <div class="work-item-arrow">→</div>
+        </div>
+
+        <div class="work-item animate-in" data-cat="brand" style="animation-delay:0.2s">
+          <div class="work-item-num">02</div>
+          <div class="work-item-body">
+            <div class="work-item-header">
+              <h3>Tinhtoh Brand Identity</h3>
+              <span class="work-item-tag">Branding</span>
+            </div>
+            <p>The visual identity behind this site — color palette, typography, and the overall feel of the Tinhtoh brand. Clean, bold, and personal.</p>
+            <div class="work-item-meta">2025 · Brand Design</div>
+          </div>
+          <div class="work-item-arrow">→</div>
+        </div>
+
+        <div class="work-item animate-in work-item--coming" data-cat="other" style="animation-delay:0.3s">
+          <div class="work-item-num">03</div>
+          <div class="work-item-body">
+            <div class="work-item-header">
+              <h3>Next Project</h3>
+              <span class="work-item-tag work-item-tag--soon">Coming Soon</span>
+            </div>
+            <p>Something new is in progress. Check back soon — or reach out if you want to collaborate on something.</p>
+            <div class="work-item-meta">2025 · TBD</div>
+          </div>
+          <div class="work-item-arrow">→</div>
+        </div>
+
+        <div class="work-item animate-in work-item--coming" data-cat="other" style="animation-delay:0.4s">
+          <div class="work-item-num">04</div>
+          <div class="work-item-body">
+            <div class="work-item-header">
+              <h3>Your project here</h3>
+              <span class="work-item-tag work-item-tag--soon">Coming Soon</span>
+            </div>
+            <p>This page grows as you do. Add new projects here whenever you complete something you're proud of.</p>
+            <div class="work-item-meta">Future · Open</div>
+          </div>
+          <div class="work-item-arrow">→</div>
+        </div>
+
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div class="empty-state" id="emptyState" style="display:none">
+        <p>Nothing here yet — but more is coming!</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Have a project for me?</h2>
+      <p>I'm open to collaborations and new opportunities.</p>
+      <a href="contact.html" class="btn-primary">Let's talk</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">TINHTOH</span>
+      <span class="footer-copy">© 2025 Tinhtoh. Built with HTML & CSS.</span>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+
+    function filterWork(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const items = document.querySelectorAll('.work-item');
+      let visible = 0;
+      items.forEach(item => {
+        if (cat === 'all' || item.dataset.cat === cat) {
+          item.style.display = 'flex'; visible++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      document.getElementById('emptyState').style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-in').forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>

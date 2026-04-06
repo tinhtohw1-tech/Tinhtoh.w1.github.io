@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Tinhtoh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">TINHTOH</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="about.html" onclick="toggleMenu()">About</a>
+    <a href="work.html" onclick="toggleMenu()">Work</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <div class="orb orb2"></div>
+    </div>
+    <div class="container">
+      <div class="page-hero-label animate-in">About Me</div>
+      <h1 class="page-hero-title animate-in" style="animation-delay:0.1s">The story<br>behind <em>Tinhtoh</em></h1>
+    </div>
+  </section>
+
+  <!-- ABOUT MAIN -->
+  <section class="section">
+    <div class="container">
+      <div class="about-main-grid">
+
+        <div class="about-sidebar animate-in">
+          <div class="big-avatar">TT</div>
+          <div class="sidebar-name">Tinhtoh</div>
+          <div class="sidebar-role">Creative & Builder</div>
+          <div class="sidebar-location">📍 Thailand</div>
+          <div class="sidebar-status">✦ Available for work</div>
+          <div class="skills-list">
+            <div class="skills-title">Skills & Interests</div>
+            <div class="skill-tag">HTML & CSS</div>
+            <div class="skill-tag">Personal Branding</div>
+            <div class="skill-tag">Creative Projects</div>
+            <div class="skill-tag">Web Design</div>
+            <div class="skill-tag">Content Creation</div>
+            <div class="skill-tag">Self-taught Builder</div>
+          </div>
+        </div>
+
+        <div class="about-body">
+          <div class="about-section animate-in" style="animation-delay:0.1s">
+            <h2>Hey, I'm Tinhtoh 👋</h2>
+            <p>Welcome to my little corner of the internet. I built this site from scratch — no templates, no website builders — just HTML and CSS, which I'm learning as I go.</p>
+            <p>I'm based in Thailand and I'm on a mission to build my personal brand online. This website is the starting point.</p>
+          </div>
+
+          <div class="about-section animate-in" style="animation-delay:0.2s">
+            <h2>What I do</h2>
+            <p>Right now I'm focused on building skills and creating things I'm proud of. I'm interested in design, creative work, and eventually selling products or services through this site.</p>
+            <p>I believe you don't need a big budget or a fancy team to build something great — just curiosity, patience, and a willingness to learn.</p>
+          </div>
+
+          <div class="about-section animate-in" style="animation-delay:0.3s">
+            <h2>Why Tinhtoh?</h2>
+            <p>Tinhtoh is my name and my brand. This site is me being intentional about my presence online — showing up, sharing work, and connecting with people.</p>
+            <p>I'm just getting started, but watch this space.</p>
+          </div>
+
+          <div class="about-cta animate-in" style="animation-delay:0.4s">
+            <a href="work.html" class="btn-primary">See My Work</a>
+            <a href="contact.html" class="btn-ghost">Say Hello →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">TINHTOH</span>
+      <span class="footer-copy">© 2025 Tinhtoh. Built with HTML & CSS.</span>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-in').forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>

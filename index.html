@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tinhtoh — Creative Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">TINHTOH</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="about.html" onclick="toggleMenu()">About</a>
+    <a href="work.html" onclick="toggleMenu()">Work</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+      <div class="grid-lines"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-tag animate-in" style="animation-delay:0.1s">Available for work ✦</div>
+      <h1 class="hero-title animate-in" style="animation-delay:0.2s">
+        <span class="line1">CREATIVE</span>
+        <span class="line2">& BUILDER</span>
+      </h1>
+      <p class="hero-sub animate-in" style="animation-delay:0.35s">
+        Hi, I'm <strong>Tinhtoh</strong> — I create things that look good and work even better.
+        Design, brand, and personal projects.
+      </p>
+      <div class="hero-cta animate-in" style="animation-delay:0.5s">
+        <a href="work.html" class="btn-primary">See My Work</a>
+        <a href="contact.html" class="btn-ghost">Get In Touch →</a>
+      </div>
+    </div>
+    <div class="hero-scroll animate-in" style="animation-delay:0.8s">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE BAND -->
+  <div class="marquee-band">
+    <div class="marquee-track">
+      <span>Design ✦ Branding ✦ Portfolio ✦ Creative Work ✦ Personal Brand ✦ Tinhtoh ✦</span>
+      <span>Design ✦ Branding ✦ Portfolio ✦ Creative Work ✦ Personal Brand ✦ Tinhtoh ✦</span>
+    </div>
+  </div>
+
+  <!-- ABOUT TEASER -->
+  <section class="section about-teaser">
+    <div class="container">
+      <div class="about-teaser-grid">
+        <div class="about-teaser-text">
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">A little about <em>Tinhtoh</em></h2>
+          <p>I'm a creative based in Thailand with a passion for building things that stand out. This site is my home on the internet — a place to share my work, my story, and what I'm up to.</p>
+          <a href="about.html" class="link-arrow">Read my full story →</a>
+        </div>
+        <div class="about-teaser-visual">
+          <div class="avatar-card">
+            <div class="avatar-img">TT</div>
+            <div class="avatar-info">
+              <strong>Tinhtoh</strong>
+              <span>Creative & Builder</span>
+              <span class="status-dot">● Available</span>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free to build</span></div>
+            <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Potential</span></div>
+            <div class="stat"><span class="stat-num">1</span><span class="stat-label">Unique voice</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK TEASER -->
+  <section class="section work-teaser">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Selected Work</div>
+        <a href="work.html" class="link-arrow">View all →</a>
+      </div>
+      <div class="work-grid">
+        <div class="work-card work-card--large">
+          <div class="work-card-inner">
+            <div class="work-num">01</div>
+            <h3>Brand Identity</h3>
+            <p>Visual identity design for a personal brand project</p>
+            <span class="work-tag">Branding</span>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-inner">
+            <div class="work-num">02</div>
+            <h3>This Website</h3>
+            <p>Built from scratch with HTML & CSS</p>
+            <span class="work-tag">Web</span>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-inner">
+            <div class="work-num">03</div>
+            <h3>Coming Soon</h3>
+            <p>More projects on the way</p>
+            <span class="work-tag">TBD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Let's work together</h2>
+      <p>Have a project in mind or just want to say hello?</p>
+      <a href="contact.html" class="btn-primary">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">TINHTOH</span>
+      <span class="footer-copy">© 2025 Tinhtoh. Built with HTML & CSS.</span>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.section').forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>
